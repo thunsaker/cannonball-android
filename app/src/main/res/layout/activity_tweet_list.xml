@@ -31,27 +31,76 @@
             android:textSize="@dimen/top_bar_text_size"
             />
 
+        <ImageView
+            android:id="@+id/refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/top_bar_right_side_button_margin_end"
+            android:layout_marginEnd="@dimen/top_bar_right_side_button_margin_end"
+            android:contentDescription="@string/content_desc_popular"
+            android:src="@drawable/ic_refresh"
+            android:tint="@color/green" />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <ListView
-            android:id="@id/android:list"
+            android:id="@android:id/list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/tweet_list_margin_top" />
 
-        <ProgressBar
-            android:id="@+id/loading"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:indeterminateDrawable="@anim/loading_rotation"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="@dimen/tweet_list_progress_bar_margin_top"
-            android:visibility="gone" />
+        <LinearLayout
+            android:id="@android:id/empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <ProgressBar
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:indeterminateDrawable="@anim/loading_rotation"
+                android:layout_margin="@dimen/tweet_list_progress_bar_margin_top"/>
+
+            <LinearLayout
+                android:id="@+id/popular_poems_no_recent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <io.fabric.samples.cannonball.view.AvenirTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:layout_margin="@dimen/share_margin_top"
+                    android:text="@string/popular_poems_no_recent"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/word_text_size"/>
+
+                <ImageButton
+                    android:id="@+id/create"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_tick"
+                    android:scaleType="centerInside"
+                    android:padding="8dp"
+                    android:tint="@color/green"
+                    android:background="@drawable/circle_outline"
+                    android:text="@string/create"
+                    android:contentDescription="@string/content_desc_create" />
+            </LinearLayout>
+
+        </LinearLayout>
 
     </RelativeLayout>
 </LinearLayout>

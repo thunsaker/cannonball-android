@@ -9,6 +9,7 @@
     <string name="content_desc_icon">Application icon</string>
     <string name="content_desc_popular">Popular poems</string>
     <string name="content_desc_history">History</string>
+    <string name="content_desc_refresh">Refresh</string>
     <string name="share">Share</string>
     <string name="delete">Delete</string>
     <string name="sign_out">Sign out</string>
@@ -64,6 +65,9 @@
     <string name="mystery">#Mystery</string>
     <string name="nature">#Nature</string>
     <string name="romance">#Romance</string>
+    <string name="create">Create Poem</string>
+    <string name="popular_poems_no_recent">No Recent Poems Found :(</string>
+    <string name="content_desc_create">Create Poem</string>
 
     <string-array name="wordbank_suffixes">
         <item>d</item>
